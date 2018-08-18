@@ -42,7 +42,7 @@ class DDPG():
 
         # Algorithm parameters
         self.gamma = 0.99  # discount factor
-        self.tau = 0.001  # for soft update of target parameters
+        self.tau = 0.001  # for soft update of target parameters, default 0.001
 
         # Score tracker
         self.best_score = -np.inf

@@ -29,17 +29,17 @@ class Actor:
         # Define input layer (states)
         states = layers.Input(shape=(self.state_size,), name='states')
 
-        kernel_initializer='glorot_normal'
+        kernel_initializer='RandomUniform'
         
         # Add hidden layers
-        net = layers.Dense(units=16, kernel_initializer=kernel_initializer)(states)
+        net = layers.Dense(units=32, kernel_initializer=kernel_initializer)(states)
         net = layers.BatchNormalization()(net)
         net = layers.LeakyReLU(1e-2)(net)
-        net = layers.Dense(units=32, kernel_initializer=kernel_initializer)(net)
+        net = layers.Dense(units=64, kernel_initializer=kernel_initializer)(net)
         net = layers.BatchNormalization()(net)
         net = layers.LeakyReLU(1e-2)(net)
 
-        #net = layers.Dense(units=4, activation='tanh')(net)
+
         
         # Try different layer sizes, activations, add batch normalization, regularizers, etc.
         
