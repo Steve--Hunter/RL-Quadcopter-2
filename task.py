@@ -36,7 +36,7 @@ class Task():
            
         # penalize too far from target position
         distance = np.linalg.norm(self.target_pos[2] - self.sim.pose[2])
-        if (distance > 1):
+        if (distance > 2):
             reward = reward - min(1,1/(distance + 1)**2)
         
 
