@@ -29,23 +29,23 @@ class Critic:
 
         # Add hidden layer(s) for state pathway
         # Try kernel initializer, to set random weights
-        kernel_initializer='glorot_uniform'
+        kernel_initializer='RandomUniform'
         
 
         # Add hidden layer(s) for state pathway
-        net_states = layers.Dense(units=16,  kernel_initializer=kernel_initializer)(states)
+        net_states = layers.Dense(units=32,  kernel_initializer=kernel_initializer)(states)
         net_states = layers.BatchNormalization()(net_states)
         net_states = layers.LeakyReLU(1e-2)(net_states)
 
-        net_states = layers.Dense(units=32,  kernel_initializer=kernel_initializer)(net_states)
+        net_states = layers.Dense(units=64,  kernel_initializer=kernel_initializer)(net_states)
         net_states = layers.BatchNormalization()(net_states)
         net_states = layers.LeakyReLU(1e-2)(net_states)
         
         # Add hidden layer(s) for action pathway
-        net_actions = layers.Dense(units=16,  kernel_initializer=kernel_initializer)(actions)
+        net_actions = layers.Dense(units=32,  kernel_initializer=kernel_initializer)(actions)
         net_actions = layers.BatchNormalization()(net_actions)
         net_actions = layers.LeakyReLU(1e-2)(net_actions)
-        net_actions = layers.Dense(units=32, kernel_initializer=kernel_initializer)(net_actions)
+        net_actions = layers.Dense(units=64, kernel_initializer=kernel_initializer)(net_actions)
         net_actions = layers.BatchNormalization()(net_actions)
         net_actions = layers.LeakyReLU(1e-2)(net_actions)
 

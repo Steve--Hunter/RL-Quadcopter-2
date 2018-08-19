@@ -24,14 +24,14 @@ class Task():
         self.action_range = self.action_high - self.action_low 
         self.action_size = 1
 
-        # Goal
+        # Goal - hover at z=10, x,y=0        
         self.target_pos = target_pos if target_pos is not None else np.array([0., 0., 10.]) 
 
     def get_reward(self):
         """Uses current pose of sim to return reward."""
         reward = 0
         
-        reward = reward + 1.-.3*(abs(self.sim.pose[2] - self.target_pos[2])).sum()
+        reward = reward + 4.-0.3*(abs(self.sim.pose[2] - self.target_pos[2])).sum()
         
            
         # penalize too far from target position
