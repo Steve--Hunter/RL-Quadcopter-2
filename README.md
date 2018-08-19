@@ -1,4 +1,4 @@
-## RL-Quadcopter-2
+# Deep RL-Quadcopter-2
 Deep RL Quadcopter Controller
 Teach a Quadcopter How to Fly!
 
