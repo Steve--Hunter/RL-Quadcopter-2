@@ -31,12 +31,12 @@ class Task():
         """Uses current pose of sim to return reward."""
         reward = 0
         
-        reward = reward + 4.-0.3*(abs(self.sim.pose[2] - self.target_pos[2])).sum()
+        reward = reward + 2.-0.3*(abs(self.sim.pose[2] - self.target_pos[2])).sum()
         
            
         # penalize too far from target position
         distance = np.linalg.norm(self.target_pos[2] - self.sim.pose[2])
-        if (distance > 2):
+        if (distance > 1):
             reward = reward - min(1,1/(distance + 1)**2)
         
 
