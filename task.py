@@ -22,7 +22,7 @@ class Task():
         self.action_low = 390
         self.action_high = 420
         self.action_range = self.action_high - self.action_low 
-        self.action_size = 4
+        self.action_size = 1
 
         # Goal - hover at z=10, x,y=0        
         self.target_pos = target_pos if target_pos is not None else np.array([0., 0., 10.]) 
